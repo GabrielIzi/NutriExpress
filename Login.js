@@ -6,8 +6,11 @@ import {
   Text,
   Image,
   TouchableOpacity,
+  StatusBar,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+
 
 export default function Login({ navigation }) {
   const [firstName, setFirstName] = useState('');
@@ -19,140 +22,145 @@ export default function Login({ navigation }) {
   };
 
   return (
-    <View style={styles.container}>
-      <Image
-        source={require('./assets/LogoNutriExpress.png')}
-        style={{ width: 200, height: 200 }}
+    <>
+      <StatusBar
+        backgroundColor="#001B3D"
       />
-      <View style={styles.section_1}>
-        <Text style={styles.label}>LOGIN</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Digite seu login..."
-          placeholderTextColor="#ccc"
-          value={firstName}
-          onChangeText={setFirstName}
-        />
-
-        <Text style={styles.label}>SENHA</Text>
-        <View style={styles.inputWrapper}>
-          <TextInput
-            style={styles.inputSenha}
-            placeholder="Digite sua senha..."
-            placeholderTextColor="#ccc"
-            value={password}
-            onChangeText={setPassword}
-            secureTextEntry={!showPassword}
+      <View style={styles.container}>
+        <KeyboardAwareScrollView
+          contentContainerStyle={styles.scrollContainer}
+          enableOnAndroid
+          extraScrollHeight={30}
+          keyboardShouldPersistTaps="handled"
+          showsVerticalScrollIndicator={false}
+        >
+          <Image
+            source={require('./assets/LogoNutriExpress.png')}
+            style={styles.logo}
+            resizeMode="contain"
           />
-          <TouchableOpacity
-            style={styles.icon}
-            onPress={() => setShowPassword(!showPassword)}>
-            <Ionicons
-              name={showPassword ? 'eye' : 'eye-off'}
-              size={22}
-              color="white"
+          <View style={styles.section_1}>
+            <Text style={styles.label}>Login</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="E-mail ou CPF"
+              placeholderTextColor="#ccc"
+              value={firstName}
+              onChangeText={setFirstName}
             />
-          </TouchableOpacity>
-        </View>
-        <Text style={styles.esqueciSenha}>Esqueci minha senha</Text>
 
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            style={[styles.button, { backgroundColor: '#2DBE60' }]}
-            onPress={handleLogin}>
-            <Text style={styles.buttonText}>Logar</Text>
-          </TouchableOpacity>
+            <Text style={styles.label}>Senha</Text>
+            <View style={styles.inputWrapper}>
+              <TextInput
+                style={styles.input}
+                placeholder="Senha"
+                placeholderTextColor="#ccc"
+                value={password}
+                onChangeText={setPassword}
+                secureTextEntry={!showPassword}
+              />
+              <TouchableOpacity
+                style={styles.icon}
+                onPress={() => setShowPassword(!showPassword)}
+              >
+                <Ionicons
+                  name={showPassword ? 'eye' : 'eye-off'}
+                  size={22}
+                  color="white"
+                />
+              </TouchableOpacity>
+            </View>
+
+            <TouchableOpacity>
+              <Text style={styles.esqueciSenha}>Esqueci minha senha</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.button} onPress={handleLogin}>
+              <Text style={styles.buttonText}>Entrar</Text>
+            </TouchableOpacity>
+          </View>
+        </KeyboardAwareScrollView>
+
+        <View style={styles.noAcount}>
+          <Text style={styles.cadastrar}>
+            Não tem uma conta?
+            <TouchableOpacity onPress={handleLogin}>
+              <Text style={styles.underCad}> Cadastre aqui</Text>
+            </TouchableOpacity>
+          </Text>
         </View>
       </View>
-      <View style={styles.noAcount} statusBarTranslucent={true}>
-        <Text style={styles.cadastrar}>
-          Não tem uma conta?
-          <Text style={styles.underCad}> Cadastre aqui</Text>
-        </Text>
-      </View>
-    </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#001B3D', // fundo sólido (azul escuro baseado na marca)
+    backgroundColor: '#001B3D',
+  },
+  scrollContainer: {
     alignItems: 'center',
-    paddingTop: 130,
+    paddingTop: 60,
+    paddingBottom: 100,
+  },
+  logo: {
+    width: 200,
+    height: 200,
+    marginBottom: 20,
   },
   section_1: {
-    width: '100%',
-    paddingRight: 15,
-    paddingLeft: 15,
+    width: '85%',
   },
   label: {
     color: 'white',
     fontSize: 16,
-    marginBottom: 5,
     fontWeight: 'bold',
-    alignSelf: 'flex-start',
+    marginBottom: 5,
   },
   input: {
     width: '100%',
-    padding: 10,
+    padding: 12,
     borderWidth: 1,
     borderColor: '#fff',
     backgroundColor: 'rgba(255, 255, 255, 0.15)',
     color: 'white',
-    marginBottom: 20,
     borderRadius: 5,
+    marginBottom: 20,
   },
   inputWrapper: {
     position: 'relative',
     justifyContent: 'center',
-    width: '100%',
-  },
-  inputSenha: {
-    width: '100%',
-    padding: 10,
-    borderWidth: 1,
-    borderColor: '#fff',
-    backgroundColor: 'rgba(255, 255, 255, 0.15)',
-    color: 'white',
-    marginBottom: 20,
-    borderRadius: 5,
   },
   icon: {
     position: 'absolute',
     right: 10,
-    top: 9,
-  },
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '100%',
-  },
-  button: {
-    flex: 1,
-    padding: 12,
-    borderRadius: 5,
-  },
-  buttonText: {
-    color: 'white',
-    textAlign: 'center',
-    fontWeight: 'bold',
+    top: 10,
   },
   esqueciSenha: {
     color: 'rgba(255, 255, 255, 0.7)',
-    paddingBottom: 10,
     textDecorationLine: 'underline',
-    paddingRight: '55%',
-    cursor: 'pointer',
+    marginBottom: 20,
+  },
+  button: {
+    backgroundColor: '#2DBE60',
+    padding: 14,
+    borderRadius: 5,
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 16,
   },
   noAcount: {
+    position: 'absolute',
+    bottom: 0,
     width: '100%',
     backgroundColor: '#11447D',
     padding: 18,
-    textAlign: 'center',
     alignItems: 'center',
-    position: 'absolute',
-    bottom: 0,
   },
   cadastrar: {
     color: 'white',
@@ -160,8 +168,5 @@ const styles = StyleSheet.create({
   underCad: {
     textDecorationLine: 'underline',
     color: '#2DBE60',
-    cursor: 'pointer',
-    paddingLeft: 3,
-    left: 5,
   },
 });
