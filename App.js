@@ -20,10 +20,10 @@ export default function App() {
           animation: 'none', // <- desativa animações de transição
         }}
       >
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Pedidos" component={Pedidos} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Prefer" component={Prefer} />
-        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Perfil" component={Perfil} />
       </Stack.Navigator>
     </NavigationContainer>
