@@ -18,7 +18,7 @@ export default function Pedidos({ action }) {
       <View style={[styles.Item_1, {marginTop: 20}]}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <View style={{marginLeft: 10, alignItems: 'center'}}>
-            <Text style={{fontSize: 16, marginTop: 10, fontWeight: 'bold'}}>Salada</Text>
+            <Text style={{fontSize: 16, marginTop: 10, fontWeight: 'bold'}}>Salada Simples</Text>
             <Image source={require('./assets/salada.png')} style={{width: 122, height: 80, borderRadius: 20}} />
           </View>
           <View>
@@ -58,7 +58,7 @@ export default function Pedidos({ action }) {
       <View style={styles.Item_1}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <View style={{marginLeft: 10, alignItems: 'center'}}>
-            <Text style={{fontSize: 16, marginTop: 10, fontWeight: 'bold'}}>Salada Premium</Text>
+            <Text style={{fontSize: 16, marginTop: 10, fontWeight: 'bold'}}>Salada Completa</Text>
             <Image source={require('./assets/Prato 2.jpeg')} style={{width: 122, height: 80, borderRadius: 20}} />
           </View>
           <View>
@@ -78,7 +78,7 @@ export default function Pedidos({ action }) {
       <View style={styles.Item_1}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <View style={{marginLeft: 10, alignItems: 'center'}}>
-            <Text style={{fontSize: 16, marginTop: 10, fontWeight: 'bold'}}>Açai</Text>
+            <Text style={{fontSize: 16, marginTop: 10, fontWeight: 'bold'}}>Açai Tradicional</Text>
             <Image source={require('./assets/Açai.jpeg')} style={{width: 122, height: 80, borderRadius: 20}} />
           </View>
           <View>
@@ -98,7 +98,7 @@ export default function Pedidos({ action }) {
       <View style={styles.Item_1}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <View style={{marginLeft: 10, alignItems: 'center'}}>
-            <Text style={{fontSize: 16, marginTop: 10, fontWeight: 'bold'}}>Hamburguer</Text>
+            <Text style={{fontSize: 16, marginTop: 10, fontWeight: 'bold'}}>Hambúrguer</Text>
             <Image source={require('./assets/Hamburger.jpeg')} style={{width: 122, height: 80, borderRadius: 20}} />
           </View>
           <View>
