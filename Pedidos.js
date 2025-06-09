@@ -11,8 +11,11 @@ export default function Pedidos({ action }) {
   return(
     <View style={styles.container}>
       <Text style={{fontSize: 20, fontWeight: 'bold', marginTop: 40, marginBottom: 20}}>Meus Pedidos</Text>
-      <View style={{ backgroundColor: '#11A2E0', width: '90%', alignItems: 'center', paddingVertical: 5, borderRadius: 5, opacity: 0.37}}>
-        <Text style={{color: '#084A79'}}>Ver meus cupons</Text>
+      <View style={{ backgroundColor: '#11A2E0', width: '90%', alignItems: 'center', paddingVertical: 5, borderRadius: 5, opacity: 0.37,
+        flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10, paddingHorizontal: 10
+      }}>
+        <Text style={{color: '#084A79', marginLeft: '33%'}}>Ver meus cupons</Text>
+        <Text style={{color: '#084A79', fontSize: 20}}>▸</Text>
       </View>
       <ScrollView style={{width: '100%', marginLeft: 20}}>
       <View style={[styles.Item_1, {marginTop: 20}]}>
@@ -52,14 +55,14 @@ export default function Pedidos({ action }) {
         </View>
         <View style={{justifyContent: 'space-between', flexDirection: 'row', width: '95%', paddingHorizontal: 10}} >
           <Text style={{fontSize: 16, fontWeight: 'bold', color: '#11447D', marginLeft: 10, marginTop: 10}}>Comprar novamente</Text>
-          <Text style={{fontSize: 16, color: '#000', marginLeft: 10, marginTop: 10}}>Avaliar</Text>
+          <Text style={{fontSize: 16, color: '#000', marginLeft: 10, marginTop: 10}}>⭐ 4,5</Text>
         </View>
       </View>
       <View style={styles.Item_1}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <View style={{marginLeft: 10, alignItems: 'center'}}>
             <Text style={{fontSize: 16, marginTop: 10, fontWeight: 'bold'}}>Salada Completa</Text>
-            <Image source={require('./assets/Prato 2.jpeg')} style={{width: 122, height: 80, borderRadius: 20}} />
+            <Image source={require('./assets/Prato_2.jpeg')} style={{width: 122, height: 80, borderRadius: 20}} />
           </View>
           <View>
             <View style={styles.Status}>
@@ -72,14 +75,14 @@ export default function Pedidos({ action }) {
         </View>
         <View style={{justifyContent: 'space-between', flexDirection: 'row', width: '95%', paddingHorizontal: 10}} >
           <Text style={{fontSize: 16, fontWeight: 'bold', color: '#11447D', marginLeft: 10, marginTop: 10}}>Comprar novamente</Text>
-          <Text style={{fontSize: 16, color: '#000', marginLeft: 10, marginTop: 10}}>Avaliar</Text>
+          <Text style={{fontSize: 16, color: '#000', marginLeft: 10, marginTop: 10}}>⭐ 3</Text>
         </View>
       </View>
       <View style={styles.Item_1}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <View style={{marginLeft: 10, alignItems: 'center'}}>
             <Text style={{fontSize: 16, marginTop: 10, fontWeight: 'bold'}}>Açai Tradicional</Text>
-            <Image source={require('./assets/Açai.jpeg')} style={{width: 122, height: 80, borderRadius: 20}} />
+            <Image source={require('./assets/Acai.jpeg')} style={{width: 122, height: 80, borderRadius: 20}} />
           </View>
           <View>
             <View style={styles.Status}>
@@ -92,7 +95,7 @@ export default function Pedidos({ action }) {
         </View>
         <View style={{justifyContent: 'space-between', flexDirection: 'row', width: '95%', paddingHorizontal: 10}} >
           <Text style={{fontSize: 16, fontWeight: 'bold', color: '#11447D', marginLeft: 10, marginTop: 10}}>Comprar novamente</Text>
-          <Text style={{fontSize: 16, color: '#000', marginLeft: 10, marginTop: 10}}>Avaliar</Text>
+          <Text style={{fontSize: 16, color: '#000', marginLeft: 10, marginTop: 10}}>⭐ 5</Text>
         </View>
       </View>
       <View style={styles.Item_1}>
@@ -112,7 +115,7 @@ export default function Pedidos({ action }) {
         </View>
         <View style={{justifyContent: 'space-between', flexDirection: 'row', width: '95%', paddingHorizontal: 10}} >
           <Text style={{fontSize: 16, fontWeight: 'bold', color: '#11447D', marginLeft: 10, marginTop: 10}}>Comprar novamente</Text>
-          <Text style={{fontSize: 16, color: '#000', marginLeft: 10, marginTop: 10}}>Avaliar</Text>
+          <Text style={{fontSize: 16, color: '#000', marginLeft: 10, marginTop: 10}}>⭐ 4,1</Text>
         </View>
       </View>
       </ScrollView>

@@ -8,6 +8,7 @@ import Prefer from './Prefer';
 import Home from './Home';
 import Pedidos from './Pedidos';
 import Perfil from './Perfil';
+import Carrinho from './Carrinho';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,9 +18,10 @@ export default function App() {
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
-          animation: 'none', // <- desativa animações de transição
+          animation: 'none',
         }}
       >
+        <Stack.Screen name="Carrinho" component={Carrinho} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Pedidos" component={Pedidos} />
         <Stack.Screen name="Home" component={Home} />
