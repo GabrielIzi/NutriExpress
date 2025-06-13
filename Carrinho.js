@@ -20,8 +20,8 @@ export default function Carrinho(){
         <View style={{alignItems: 'center', backgroundColor: '#fff', width:'70%', marginRight: 20, padding: 10, borderRadius: 10}}>
             <Text style={{fontSize: 20, fontWeight: 400}}>Rua, 100 Campo Limpo ▼</Text>
         </View>
-    </View>
-    <View style={styles.section_1}>
+      </View>
+      <View style={styles.section_1}>
         <Text style={{ fontSize: 25, fontWeight: 'bold' }}>Carrinho</Text>
         <View style={styles.Itens}>
             <View style={{ flexDirection: 'row'}}>

@@ -16,11 +16,11 @@ import { useNavigation } from '@react-navigation/native';
 
 export default function Home (){
   const navigation = useNavigation();
+  const [expanded, setExpanded] = useState(false);
   const [fontsLoaded] = useFonts({
     Inter: require('./assets/static/Inter_18pt-Bold.ttf'),
   });
   if (!fontsLoaded) return null;
-  const [expanded, setExpanded] = useState(false);
   const screenHeight = Dimensions.get('window').height
 
   return (
