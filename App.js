@@ -10,6 +10,7 @@ import Pedidos from './Pedidos';
 import Perfil from './Perfil';
 import Carrinho from './Carrinho';
 import PaginaPedido from './PaginaPedido';
+import InfoProdutos from './InfoProduto';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,7 @@ export default function App() {
           animation: 'none',
         }}
       >
+        <Stack.Screen name="InfoProdutos" component={InfoProdutos} />
         <Stack.Screen name="PaginaPedido" component={PaginaPedido} />
         <Stack.Screen name="Carrinho" component={Carrinho} />
         <Stack.Screen name="Login" component={Login} />

@@ -99,15 +99,15 @@ export default function Home (){
           </View>
           <Text style={{fontSize:20, marginTop: 10, marginBottom: 5, marginLeft: 20, fontWeight: 'bold'}}>Mais Pedido 🔥</Text>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'start', alignItems: 'center',
-          paddingHorizontal: 40, marginBottom: 20}}>
-            <Image source={require('./assets/salada.png')} style={{width: 150, height: 90, borderRadius: 10}} />
+          <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', justifyContent: 'start', alignItems: 'center',
+          paddingHorizontal: 40, marginBottom: 20}} onPress={() => {navigation.navigate('InfoProdutos');}}>
+            <Image source={require('./assets/Feijoada.jpeg')} style={{width: 150, height: 90, borderRadius: 10}} />
             <View style={{ marginLeft: 20}}>
-              <Text style={{fontSize: 20, fontWeight: 'bold'}}>Salada Simples</Text>
-              <Text style={{fontSize: 15, fontWeight: 200, marginLeft: 10}}>10-20 min.</Text>
+              <Text style={{fontSize: 20, fontWeight: 'bold'}}>Feijoada Fit</Text>
+              <Text style={{fontSize: 15, fontWeight: 200, marginLeft: 10}}>15-20 min.</Text>
               <Text style={{fontSize: 15, fontWeight: 400, color: '#368212', marginLeft: 10}}>R$ 20,00 + Frete</Text>
             </View>
-          </View>
+          </TouchableOpacity>
           <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'start', alignItems: 'center',
           paddingHorizontal: 40, marginBottom: 20}}>
             <Image source={require('./assets/Prato_2.jpeg')} style={{width: 150, height: 90, borderRadius: 10}} />
@@ -141,10 +141,10 @@ export default function Home (){
           </View>
           <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'start', alignItems: 'center',
           paddingHorizontal: 40, marginBottom: 20}}>
-            <Image source={require('./assets/Feijoada.jpeg')} style={{width: 150, height: 90, borderRadius: 10}} />
+            <Image source={require('./assets/salada.png')} style={{width: 150, height: 90, borderRadius: 10}} />
             <View style={{ marginLeft: 20}}>
-              <Text style={{fontSize: 20, fontWeight: 'bold'}}>Feijoada Fit</Text>
-              <Text style={{fontSize: 15, fontWeight: 200, marginLeft: 10}}>15-20 min.</Text>
+              <Text style={{fontSize: 20, fontWeight: 'bold'}}>Salada Simples</Text>
+              <Text style={{fontSize: 15, fontWeight: 200, marginLeft: 10}}>10-20 min.</Text>
               <Text style={{fontSize: 15, fontWeight: 400, color: '#368212', marginLeft: 10}}>R$ 25,00 + Frete</Text>
             </View>
           </View>

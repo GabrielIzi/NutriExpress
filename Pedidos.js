@@ -24,14 +24,14 @@ export default function Pedidos({ action }) {
       <TouchableOpacity style={[styles.Item_1, {marginTop: 20}]} onPress={() => {navigation.navigate('PaginaPedido');}}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <View style={{marginLeft: 10, alignItems: 'center'}}>
-            <Text style={{fontSize: 16, marginTop: 10, fontWeight: 'bold'}}>Salada Simples</Text>
-            <Image source={require('./assets/salada.png')} style={{width: 122, height: 80, borderRadius: 20}} />
+            <Text style={{fontSize: 16, marginTop: 10, fontWeight: 'bold'}}>Feijoada Fit</Text>
+            <Image source={require('./assets/Feijoada.jpeg')} style={{width: 122, height: 80, borderRadius: 20}} />
           </View>
           <View>
             <View style={styles.Status}>
               <Text style={{fontSize: 12, marginTop: 10}}>✅ Pedido processado - N° 9999</Text>
               <Text style={{fontSize: 12}}>✅ Em produção...</Text>
-              <Text style={{fontSize: 12, opacity: 0}}>✅ Saiu para entrega</Text>
+              <Text style={{fontSize: 12, opacity: 1}}>✅ Saiu para entrega</Text>
               <Text style={{fontSize: 12, opacity: 0}}>✅ Seu pedido foi entregue. Aproveite</Text>
             </View>
           </View>
@@ -41,11 +41,11 @@ export default function Pedidos({ action }) {
           <Text style={{fontSize: 16, color: '#000', marginLeft: 10, marginTop: 10}}>Avaliar</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.Item_1} onPress={() => {navigation.navigate('PaginaPedido');}}>
+      <TouchableOpacity style={styles.Item_1} >
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <View style={{marginLeft: 10, alignItems: 'center'}}>
-            <Text style={{fontSize: 16, marginTop: 10, fontWeight: 'bold'}}>Feijoada Fit</Text>
-            <Image source={require('./assets/Feijoada.jpeg')} style={{width: 122, height: 80, borderRadius: 20}} />
+            <Text style={{fontSize: 16, marginTop: 10, fontWeight: 'bold'}}>Salada Simples</Text>
+            <Image source={require('./assets/salada.png')} style={{width: 122, height: 80, borderRadius: 20}} />
           </View>
           <View>
             <View style={styles.Status}>
@@ -61,7 +61,7 @@ export default function Pedidos({ action }) {
           <Text style={{fontSize: 16, color: '#000', marginLeft: 10, marginTop: 10}}>⭐ 4,5</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.Item_1} onPress={() => {navigation.navigate('PaginaPedido');}}>
+      <TouchableOpacity style={styles.Item_1} >
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <View style={{marginLeft: 10, alignItems: 'center'}}>
             <Text style={{fontSize: 16, marginTop: 10, fontWeight: 'bold'}}>Salada Completa</Text>
@@ -81,7 +81,7 @@ export default function Pedidos({ action }) {
           <Text style={{fontSize: 16, color: '#000', marginLeft: 10, marginTop: 10}}>⭐ 3</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.Item_1} onPress={() => {navigation.navigate('PaginaPedido');}}>
+      <TouchableOpacity style={styles.Item_1} >
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <View style={{marginLeft: 10, alignItems: 'center'}}>
             <Text style={{fontSize: 16, marginTop: 10, fontWeight: 'bold'}}>Açai Tradicional</Text>
@@ -101,7 +101,7 @@ export default function Pedidos({ action }) {
           <Text style={{fontSize: 16, color: '#000', marginLeft: 10, marginTop: 10}}>⭐ 5</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.Item_1} onPress={() => {navigation.navigate('PaginaPedido');}}>
+      <TouchableOpacity style={styles.Item_1} >
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <View style={{marginLeft: 10, alignItems: 'center'}}>
             <Text style={{fontSize: 16, marginTop: 10, fontWeight: 'bold'}}>Hambúrguer</Text>
