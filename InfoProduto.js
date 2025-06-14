@@ -17,16 +17,34 @@ export default function InfoProdutos (){
         Feijoada: require('./assets/Feijoada.jpeg'),
         Salada_Completa: require('./assets/Prato_2.jpeg'),
         Salada_Premium: require('./assets/Prato_1.jpeg'),
+        Acai_Tradicional: require('./assets/Acai.jpeg'),
+        Salada_Simples: require('./assets/salada.png'),
+        PF_Proteico: require('./assets/PF.jpeg'),
+        Lasanha: require('./assets/Lasanha.jpeg'),
+        Hamburguer: require('./assets/Hamburger.jpeg'),
+        Sorvete: require('./assets/Sorvete.jpeg'),
     };
     const descricao = {
         Feijoada: "Preparada com cortes magros, feijão preto rico em fibras, temperos naturais e zero excessos",
         Salada_Completa: "Semelhante à salada simples, mas com ingredientes extras que tornam a refeição mais completa e nutritiva.",
         Salada_Premium: "Salada Premium com ingredientes frescos e saudáveis, ideal para quem busca uma refeição leve e nutritiva.",
+        Acai_Tradicional: "Açaí tradicional com granola, banana e mel.",
+        Salada_Simples: "Salada simples com alface, tomate e cenoura.",
+        PF_Proteico: "Prato feito proteico com arroz, feijão e peito de frango grelhado.",
+        Lasanha: "Lasanha de berinjela com queijo e molho de tomate.",
+        Hamburguer: "Hambúrguer artesanal com carne bovina e queijo cheddar.",
+        Sorvete: "Sorvete cremoso de chocolate com cobertura de granulado.",
     };
     const Beneficios = {
         Feijoada: "● Carnes magras (menos gordura e calorias)\n● Pouco ou nenhum óleo\n● Sem embutidos pesados\n● Temperos naturais, sem excesso de sal\n● Feijão preto rico em fibras, que ajuda na saciedade",
         Salada_Completa: "● Ingredientes frescos e saudáveis\n● Opção leve e nutritiva\n● Ideal para quem busca uma refeição balanceada",
         Salada_Premium: "● Ingredientes premium selecionados\n● Sabor excepcional e apresentação sofisticada\n● Perfeita para ocasiões especiais",
+        Acai_Tradicional: "● Açaí com granola, banana e mel\n● Rico em antioxidantes\n● Energético e nutritivo",
+        Salada_Simples: "● Salada leve e refrescante\n● Ideal para dias quentes\n● Baixo em calorias",
+        PF_Proteico: "● Rico em proteínas\n● Ajuda na saciedade\n● Ideal para dietas de emagrecimento",
+        Lasanha: "● Saborosa e nutritiva\n● Feita com ingredientes frescos\n● Ideal para o almoço em família",
+        Hamburguer: "● Sabor intenso e suculento\n● Feito com carne bovina de qualidade\n● Acompanhado de batatas fritas",
+        Sorvete: "● Delicioso e cremoso\n● Feito com ingredientes naturais\n● Perfeito para a sobremesa",
     }
     const { produto } = route.params;
     const imageSource = images[produto.urlProduto] || require('./assets/Feijoada.jpeg');
