@@ -100,7 +100,9 @@ export default function Home (){
           <Text style={{fontSize:20, marginTop: 10, marginBottom: 5, marginLeft: 20, fontWeight: 'bold'}}>Mais Pedido 🔥</Text>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', justifyContent: 'start', alignItems: 'center',
-          paddingHorizontal: 40, marginBottom: 20}} onPress={() => {navigation.navigate('InfoProdutos');}}>
+          paddingHorizontal: 40, marginBottom: 20}} onPress={() => {navigation.navigate('InfoProdutos', {produto: {
+              urlProduto: 'Feijoada', nomeProduto: 'Feijoada Fit', precoProduto: 'R$ 20,00'
+          }});}}>
             <Image source={require('./assets/Feijoada.jpeg')} style={{width: 150, height: 90, borderRadius: 10}} />
             <View style={{ marginLeft: 20}}>
               <Text style={{fontSize: 20, fontWeight: 'bold'}}>Feijoada Fit</Text>
@@ -108,24 +110,27 @@ export default function Home (){
               <Text style={{fontSize: 15, fontWeight: 400, color: '#368212', marginLeft: 10}}>R$ 20,00 + Frete</Text>
             </View>
           </TouchableOpacity>
-          <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'start', alignItems: 'center',
-          paddingHorizontal: 40, marginBottom: 20}}>
+          <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', justifyContent: 'start', alignItems: 'center',
+          paddingHorizontal: 40, marginBottom: 20}} onPress={() => {navigation.navigate('InfoProdutos', {produto: {urlProduto: 'Salada_Completa', 
+            nomeProduto: 'Salada Completa', precoProduto: 'R$ 25,00'}
+          });}}>
             <Image source={require('./assets/Prato_2.jpeg')} style={{width: 150, height: 90, borderRadius: 10}} />
             <View style={{ marginLeft: 20}}>
               <Text style={{fontSize: 20, fontWeight: 'bold'}}>Salada Completa</Text>
               <Text style={{fontSize: 15, fontWeight: 200, marginLeft: 10}}>15-20 min.</Text>
               <Text style={{fontSize: 15, fontWeight: 400, color: '#368212', marginLeft: 10}}>R$ 25,00 + Frete</Text>
             </View>
-          </View>
-          <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'start', alignItems: 'center',
-          paddingHorizontal: 40, marginBottom: 20}}>
+          </TouchableOpacity>
+          <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', justifyContent: 'start', alignItems: 'center',
+          paddingHorizontal: 40, marginBottom: 20}} onPress={() => {navigation.navigate('InfoProdutos', {produto: {
+              urlProduto: 'Salada_Premium', nomeProduto: 'Salada Premium', precoProduto: 'R$ 30,00'}});}}>
             <Image source={require('./assets/Prato_1.jpeg')} style={{width: 150, height: 90, borderRadius: 10}} />
             <View style={{ marginLeft: 20}}>
               <Text style={{fontSize: 20, fontWeight: 'bold'}}>Salada Premium</Text>
               <Text style={{fontSize: 15, fontWeight: 200, marginLeft: 10}}>10-30 min.</Text>
               <Text style={{fontSize: 15, fontWeight: 400, color: '#368212', marginLeft: 10}}>R$ 30,00 + Frete</Text>
             </View>
-          </View>
+          </TouchableOpacity>
           </ScrollView>
 
           <Text style={{fontSize:20, marginTop: 10, marginBottom: 5, marginLeft: 20, fontWeight: 'bold'}}>Mais Rápidos ⏳</Text>

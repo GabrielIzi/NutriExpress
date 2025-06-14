@@ -8,13 +8,33 @@ import {
     TouchableOpacity,
     ImageBackground,
  } from "react-native";
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 export default function InfoProdutos (){
     const navigation = useNavigation();
+    const route = useRoute();
+    const images = {
+        Feijoada: require('./assets/Feijoada.jpeg'),
+        Salada_Completa: require('./assets/Prato_2.jpeg'),
+        Salada_Premium: require('./assets/Prato_1.jpeg'),
+    };
+    const descricao = {
+        Feijoada: "Preparada com cortes magros, feijão preto rico em fibras, temperos naturais e zero excessos",
+        Salada_Completa: "Semelhante à salada simples, mas com ingredientes extras que tornam a refeição mais completa e nutritiva.",
+        Salada_Premium: "Salada Premium com ingredientes frescos e saudáveis, ideal para quem busca uma refeição leve e nutritiva.",
+    };
+    const Beneficios = {
+        Feijoada: "● Carnes magras (menos gordura e calorias)\n● Pouco ou nenhum óleo\n● Sem embutidos pesados\n● Temperos naturais, sem excesso de sal\n● Feijão preto rico em fibras, que ajuda na saciedade",
+        Salada_Completa: "● Ingredientes frescos e saudáveis\n● Opção leve e nutritiva\n● Ideal para quem busca uma refeição balanceada",
+        Salada_Premium: "● Ingredientes premium selecionados\n● Sabor excepcional e apresentação sofisticada\n● Perfeita para ocasiões especiais",
+    }
+    const { produto } = route.params;
+    const imageSource = images[produto.urlProduto] || require('./assets/Feijoada.jpeg');
+    const descricaoProduto = descricao[produto.urlProduto] || "Descrição não disponível";
+    const beneficiosProduto = Beneficios[produto.urlProduto] || "Benefícios não disponíveis";
     return(
         <View style={styles.container}>
-            <ImageBackground source={require('./assets/Feijoada.jpeg')} style={{width: '100%', height: 350, justifyContent: 'center', alignItems: 'center'}}>
+            <ImageBackground source={imageSource} style={{width: '100%', height: 300, justifyContent: 'center', alignItems: 'center'}}>
                 <View style={styles.header}>
                     <View style={{marginHorizontal: 20, backgroundColor: '#fff', padding: 10, width: 50, height: 50, borderRadius: 100, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
                         <TouchableOpacity onPress={() => {navigation.navigate('Home');}}>
@@ -22,30 +42,28 @@ export default function InfoProdutos (){
                         </TouchableOpacity>
                     </View>
                 </View>
-                <View style={styles.section_1}>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 30, paddingTop: 20 }}>
-                        <Text style={{fontSize: 22, fontWeight: 600}}>Feijoada Fit</Text>
-                        <Text style={{fontSize: 22, fontWeight: 600, color: '#368212'}}>R$ 20,00</Text>
-                    </View>
-                    <Text style={{marginHorizontal: 30, marginTop: 20}}>Preparada com cortes magros, feijão preto rico em fibras, temperos naturais e zero excessos</Text>
-                    <Text style={{marginHorizontal: 30, marginTop: 10, color: '#368212', fontSize: 16, fontWeight: 500}}>Alinhado com o seu objetivo!</Text>
-                    <View style={{alignItems: 'center', marginTop: 20}}>
-                        <Text style={{fontSize: 16, fontWeight: 500}}>Porque escolher essa opção?</Text>
-                    </View>
-                    <View style={{marginHorizontal: 20, marginTop: 20, marginBottom: 60}}>
-                        <Text style={{marginBottom: 20}}>● Carnes magras (menos gordura e calorias)</Text>
-                        <Text style={{marginBottom: 20}}>● Pouco ou nenhum óleo</Text>
-                        <Text style={{marginBottom: 20}}>● Sem embutidos pesados</Text>
-                        <Text style={{marginBottom: 20}}>● Temperos naturais, sem excesso de sal</Text>
-                        <Text style={{marginBottom: 20}}>● Feijão preto rico em fibras, que ajuda na saciedade</Text>
-                    </View>
-                    <View>
-                        <TouchableOpacity style={{backgroundColor: '#368212', padding: 15, borderRadius: 10, marginHorizontal: 30, marginTop: 20}} onPress={() => {navigation.navigate('Carrinho');}}>
-                            <Text style={{color: '#fff', fontSize: 16, textAlign: 'center'}}>Adicionar ao Carrinho</Text>
-                        </TouchableOpacity>
-                    </View>
-                </View>
             </ImageBackground>
+            <View style={styles.section_1}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 30, paddingTop: 20 }}>
+                    <Text style={{fontSize: 22, fontWeight: 600}}>{produto.nomeProduto}</Text>
+                    <Text style={{fontSize: 22, fontWeight: 600, color: '#368212'}}>{produto.precoProduto}</Text>
+                </View>
+                <Text style={{marginHorizontal: 30, marginTop: 20}}>{descricaoProduto}</Text>
+                <Text style={{marginHorizontal: 30, marginTop: 10, color: '#368212', fontSize: 16, fontWeight: 500}}>Alinhado com o seu objetivo!</Text>
+                <View style={{alignItems: 'center', marginTop: 20}}>
+                    <Text style={{fontSize: 16, fontWeight: 500}}>Porque escolher essa opção?</Text>
+                </View>
+                <View style={{marginHorizontal: 20, marginTop: 20, marginBottom: 60}}> 
+                    {beneficiosProduto.split('\n').map((linha, index) => (
+                        <Text key={index} style={{marginBottom: 20}}>{linha}</Text>
+                    ))}
+                </View>
+            </View>
+            <View>
+                <TouchableOpacity style={{backgroundColor: '#368212', padding: 15, borderRadius: 10, marginHorizontal: 30, marginTop: 20}} onPress={() => {navigation.navigate('Carrinho');}}>
+                    <Text style={{color: '#fff', fontSize: 16, textAlign: 'center'}}>Adicionar ao Carrinho</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     );
 }
@@ -60,13 +78,14 @@ const styles = StyleSheet.create({
         height: 100,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingTop: 320,
+        paddingTop: 50,
         paddingBottom: 250,
     },
     section_1: {
         width: '100%',
-        height: '100%',
+        height: 500,
         backgroundColor: 'rgba(255, 255, 255, 1)',
         borderRadius: 50,
+        marginTop: -45,
     },
 });
